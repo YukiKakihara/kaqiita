@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { client } from '../utils/api';
 
 const Page: React.FC = () => {
+  console.log(getBlog());
+
   return (
     <div className={styles.container}>
       <Head>
@@ -67,5 +70,17 @@ const Page: React.FC = () => {
     </div>
   )
 }
+
+const getBlog = async () => {
+  try {
+    const blogs = await client.v1.blogs.$get();
+    return {
+      blogs,
+      revalidate: 60,
+    };
+  } catch (e) {
+    return { notFound: true };
+  }
+};
 
 export default Page;
