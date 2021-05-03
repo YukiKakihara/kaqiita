@@ -26,6 +26,7 @@ export const Container: React.FC<Props> = ({ children, className }) => {
 const Wrapper = styled.footer({});
 
 const SiteTitle = styled.div({
+  maxWidth: 900,
   padding: '30px 50px',
 });
 
@@ -38,6 +39,7 @@ const Sub = styled.span({
 });
 
 const Main = styled.div({
+  maxWidth: 900,
   minHeight: 800,
   padding: '0 50px 50px',
 });
