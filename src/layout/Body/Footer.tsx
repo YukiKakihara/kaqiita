@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { Colors } from '../constants/Colors';
-import { TextLink } from '../components/TextLink';
+import { Colors } from '../../constants/Colors';
+import { TextLink } from '../../components/TextLink';
 
 interface Props {
   className?: string;

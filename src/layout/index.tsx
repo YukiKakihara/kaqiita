@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Colors } from '../constants/Colors';
 import { Sidebar } from './Sidebar';
-import { Footer } from './Footer';
+import { Body } from './Body';
 
 interface Props {
   className?: string;
@@ -11,10 +11,7 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
   return (
     <Wrapper className={className}>
       <WrappedSidebar />
-      <Body>
-        <Main>{children}</Main>
-        <Footer />
-      </Body>
+      <WrappedBody>{children}</WrappedBody>
     </Wrapper>
   );
 };
@@ -30,7 +27,7 @@ const WrappedSidebar = styled(Sidebar)({
   flex: 1,
 });
 
-const Body = styled.div({
+const WrappedBody = styled(Body)({
   flex: 8,
 });
 
