@@ -4,9 +4,9 @@ import Head from 'next/head';
 import { useBlog } from 'hooks/blogs/[id]/useBlog';
 import Custom404 from 'pages/404';
 import { HeaderOne } from 'components/HeaderOne';
-import { BlogBody } from 'components/BlogBody';
+import { BlogBodyParser } from 'components/BlogBodyParser';
 
-const Page: React.FC<any> = () => {
+const Page: React.FC = () => {
   const router = useRouter();
   const { id: blogId } = router.query;
   const {
@@ -30,7 +30,7 @@ const Page: React.FC<any> = () => {
         <meta name="description" content={summary} />
       </Head>
       <HeaderOne text={title} />
-      <BlogBody html={body} />
+      <BlogBodyParser body={body} />
     </Wrapper>
   );
 };

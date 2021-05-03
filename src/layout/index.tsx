@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 import { Colors } from 'constants/Colors';
-import { TitleAndDescription } from 'components/TitleAndDescription';
 import { Sidebar } from './Sidebar';
 import { Body } from './Body';
 

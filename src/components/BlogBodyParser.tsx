@@ -7,13 +7,13 @@ import {
 } from 'styles';
 
 interface Props {
+  body: string;
   className?: string;
-  html: string;
 }
 
-export const BlogBody: React.FC<Props> = ({ className, html }) => {
+export const BlogBodyParser: React.FC<Props> = ({ body, className }) => {
   return (
-    <Wrapper className={className} dangerouslySetInnerHTML={{ __html: html }} />
+    <Wrapper className={className} dangerouslySetInnerHTML={{ __html: body }} />
   );
 };
 
@@ -24,4 +24,7 @@ const Wrapper = styled.div({
   p: {
     lineHeight: baseLineHeight,
   },
+  ul: {
+    paddingInlineStart: 20,
+  }
 });
