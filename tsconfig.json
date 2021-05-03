@@ -21,6 +21,7 @@
     "paths": {
       "components/*": ["src/components/*"],
       "constants/*": ["src/constants/*"],
+      "hooks/*": ["hooks/*"],
       "src/*": ["src/*"],
       "types/*": ["src/types/*"],
       "utils/*": ["utils/*"]

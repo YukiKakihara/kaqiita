@@ -8,11 +8,11 @@ export type ListContentsResponse<T> = {
 
 // オブジェクト形式のレスポンス用
 export type ContentResponse<T> = {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  revisedAt?: string;
 } & T;
 
 // リスト形式のクエリ用
