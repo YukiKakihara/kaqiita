@@ -16,7 +16,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
         <TextLink>お問い合わせ</TextLink>
       </Content>
       <Content>
-        <TextLink>プライバシーポリシー</TextLink>
+        <TextLink href="/privacy_policy">プライバシーポリシー</TextLink>
       </Content>
     </Wrapper>
   );

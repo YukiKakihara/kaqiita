@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Head from 'next/head';
 import { Colors } from '../constants/Colors';
 import { Sidebar } from './Sidebar';
 import { Body } from './Body';
@@ -10,6 +11,14 @@ interface Props {
 export const Layout: React.FC<Props> = ({ children, className }) => {
   return (
     <Wrapper className={className}>
+      <Head>
+        <title>Kaqiita</title>
+        <meta
+          name="description"
+          content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <WrappedSidebar />
       <WrappedBody>{children}</WrappedBody>
     </Wrapper>

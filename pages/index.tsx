@@ -1,19 +1,9 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { client } from '../utils/api';
 
 const Page: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Kaqiita</title>
-        <meta
-          name="description"
-          content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
