@@ -23,6 +23,7 @@
       "constants/*": ["src/constants/*"],
       "hooks/*": ["hooks/*"],
       "src/*": ["src/*"],
+      "styles/*": ["styles/*"],
       "types/*": ["src/types/*"],
       "utils/*": ["utils/*"]
     }

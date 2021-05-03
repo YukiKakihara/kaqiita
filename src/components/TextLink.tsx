@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-import { Colors } from 'constants/Colors';
+import { textLinkStyle } from 'styles';
 
-export const TextLink = styled.a({
-  color: Colors.textLink,
-  textDecoration: 'underline',
-});
+export const TextLink = styled.a(textLinkStyle);

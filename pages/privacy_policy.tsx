@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
+import { baseLineHeight } from 'styles';
 import { HeaderOne } from 'components/HeaderOne';
 import { HeaderTwo } from 'components/HeaderTwo';
 import { TextLink } from 'components/TextLink';
@@ -60,7 +61,7 @@ const Page: React.FC = () => {
 const Wrapper = styled.div({});
 
 const Paragraph = styled.div({
-  lineHeight: 1.8,
+  lineHeight: baseLineHeight,
   marginBottom: 20,
 });
 

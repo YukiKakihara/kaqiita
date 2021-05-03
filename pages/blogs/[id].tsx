@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { useBlog } from 'hooks/blogs/[id]/useBlog';
 import Custom404 from 'pages/404';
 import { HeaderOne } from 'components/HeaderOne';
@@ -10,7 +11,7 @@ const Page: React.FC<any> = () => {
   const { id: blogId } = router.query;
   const {
     blog,
-    blog: { body, title },
+    blog: { body, summary, title },
     isError,
   } = useBlog(blogId as string);
 
@@ -24,6 +25,10 @@ const Page: React.FC<any> = () => {
 
   return (
     <Wrapper>
+      <Head>
+        <title>{title} | Kaqiita</title>
+        <meta name="description" content={summary} />
+      </Head>
       <HeaderOne text={title} />
       <BlogBody html={body} />
     </Wrapper>

@@ -5,6 +5,7 @@ export type BlogListResponse = ListContentsResponse<BlogResponse>;
 
 export type BlogResponse = ContentResponse<{
   title?: string;
+  summary?: string;
   body?: string;
   tags?: TagResponse[];
 }>;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { headerTwoStyle } from 'styles';
+import { headerThreeStyle } from 'styles';
 
 interface Props {
   className?: string;
@@ -10,4 +10,4 @@ export const HeaderTwo: React.FC<Props> = ({ className, text }) => {
   return <Wrapper className={className}>{text}</Wrapper>;
 };
 
-const Wrapper = styled.h2(headerTwoStyle);
+const Wrapper = styled.h3(headerThreeStyle);
