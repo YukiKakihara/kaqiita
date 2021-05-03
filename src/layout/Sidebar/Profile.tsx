@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { Image } from '../../components/Image';
-import { TextLink } from '../../components/TextLink';
+import { Image } from 'components/Image';
+import { TextLink } from 'components/TextLink';
 import { Item } from './Item';
 
 interface Props {

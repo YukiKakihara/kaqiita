@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Colors } from '../../constants/Colors';
+import { Colors } from 'constants/Colors';
 import { Profile } from './Profile';
 
 interface Props {

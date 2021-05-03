@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
-import { HeaderOne } from '../src/components/HeaderOne';
-import { HeaderTwo } from '../src/components/HeaderTwo';
-import { TextLink } from '../src/components/TextLink';
+import Head from 'next/head';
+import { HeaderOne } from 'components/HeaderOne';
 
 const Page: React.FC = () => {
   return (
     <Wrapper>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <HeaderOne text="お問い合わせ" />
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSeAcO0gzL183Zxxs1LCmCIKKO5YFUZjZjeVe1kg8Lb5dKlpLg/viewform?embedded=true"

@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
-import { HeaderOne } from '../src/components/HeaderOne';
-import { HeaderTwo } from '../src/components/HeaderTwo';
-import { TextLink } from '../src/components/TextLink';
+import Head from 'next/head';
+import { HeaderOne } from 'components/HeaderOne';
+import { HeaderTwo } from 'components/HeaderTwo';
+import { TextLink } from 'components/TextLink';
 
 const Page: React.FC = () => {
   return (
     <Wrapper>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <HeaderOne text="プライバシーポリシー" />
       <HeaderTwo text="広告の配信について" />
       <Paragraph>
