@@ -13,7 +13,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
         <TextLink href="/">ホーム</TextLink>
       </Content>
       <Content>
-        <TextLink>お問い合わせ</TextLink>
+        <TextLink href="/inquiry">お問い合わせ</TextLink>
       </Content>
       <Content>
         <TextLink href="/privacy_policy">プライバシーポリシー</TextLink>
