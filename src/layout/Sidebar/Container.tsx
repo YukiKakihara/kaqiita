@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Colors } from '../../constants/Colors';
 import { Profile } from './Profile';
 
 interface Props {
@@ -14,7 +15,7 @@ export const Container: React.FC<Props> = ({ className }) => {
 };
 
 const Wrapper = styled.div({
-  backgroundColor: '#1f2123',
-  borderRight: `1px solid #404244`,
+  backgroundColor: Colors.sidebarBackground,
+  borderRight: `1px solid ${Colors.border}`,
   padding: 30,
 });

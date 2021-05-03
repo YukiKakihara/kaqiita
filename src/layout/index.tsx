@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Colors } from '../constants/Colors';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
 
@@ -19,8 +20,8 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
 };
 
 const Wrapper = styled.div({
-  backgroundColor: '#2a2c2f',
-  color: '#fafafa',
+  backgroundColor: Colors.baseBackground,
+  color: Colors.text,
   display: 'flex',
   fontSize: 14,
 });

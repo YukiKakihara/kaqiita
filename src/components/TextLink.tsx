@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { Colors } from '../constants/Colors';
 
 export const TextLink = styled.a({
-  color: '#66a5e1',
+  color: Colors.textLink,
   textDecoration: 'underline',
 });
