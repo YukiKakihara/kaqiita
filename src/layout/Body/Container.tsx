@@ -19,6 +19,21 @@ export const Container: React.FC<Props> = ({ children, className }) => {
           エンジニアが適当なことを書いてます。温かく見守ってやってください。
         </Sub>
       </SiteTitle>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428388094499729"
+        crossOrigin="anonymous"
+      ></script>
+      {/* ディスプレイ_kaqiita */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-8428388094499729"
+        data-ad-slot="4677958834"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       <Main>{children}</Main>
       <Footer />
     </Wrapper>
