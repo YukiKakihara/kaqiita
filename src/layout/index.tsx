@@ -19,6 +19,11 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
           content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428388094499729"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <NotMobile>
         <WrappedSidebar />
