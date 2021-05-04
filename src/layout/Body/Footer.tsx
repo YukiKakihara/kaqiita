@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mq } from 'lib/mediaQuery';
+import { mq } from 'utils/mediaQuery';
 import { Colors } from 'constants/Colors';
 import { TextLink } from 'components/TextLink';
 

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { mq } from 'lib/mediaQuery';
+import { mq } from 'utils/mediaQuery';
 import { BlogResponse as Blog } from 'src/types/blog';
+import { sortBlogsByNewArrival } from 'utils/sortBlogsByNewArrival';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogCard } from './BlogCard';
 
@@ -14,7 +15,7 @@ export const BlogIndex: React.FC<Props> = ({ blogs, className }) => {
     <Wrapper className={className}>
       <HeaderOne text="ブログ記事一覧" />
       <CardArea>
-        {blogs.map((blog) => (
+        {sortBlogsByNewArrival(blogs).map((blog) => (
           <WrappedBlogCard key={blog.id} blog={blog} />
         ))}
       </CardArea>

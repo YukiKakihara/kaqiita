@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mq } from 'lib/mediaQuery';
+import { mq } from 'utils/mediaQuery';
 import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Footer } from './Footer';
 
