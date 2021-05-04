@@ -22,12 +22,14 @@ export const BlogCard: React.FC<Props> = ({ blog, className }) => {
 
   return (
     <Wrapper className={className} onClick={onClick}>
-      <WrappedResponsiveImage
-        alt={title}
-        aspectRatio={1}
-        imageBorderRadius={10}
-        src={url}
-      />
+      {url && (
+        <WrappedResponsiveImage
+          alt={title}
+          aspectRatio={1}
+          imageBorderRadius={10}
+          src={url}
+        />
+      )}
       <Title>
         <a href={`/blogs/${id}`}>{title}</a>
       </Title>
