@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import type { BlogResponse } from 'types/blog';
+import { BlogResponse, initialBlogValue } from 'src/types/blog';
 import { client } from 'utils/api';
 
 export const useBlog = (
   blogId: string
 ): { blog: BlogResponse; isError: boolean } => {
-  const [blog, setBlog] = useState<BlogResponse>({});
+  const [blog, setBlog] = useState<BlogResponse>(initialBlogValue);
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {

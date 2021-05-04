@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
+import { useRoot } from 'hooks/useRoot';
 import { HeaderOne } from 'components/HeaderOne';
 import { AboutBlog } from 'components/AboutBlog';
 
 const Page: React.FC = () => {
+  useRoot();
+
   return (
     <Wrapper>
       <HeaderOne text="ブログ記事一覧" />
