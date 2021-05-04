@@ -34,6 +34,7 @@ const Wrapper = styled.div({
     backgroundColor: Colors.darkBackground,
     borderRadius: 2,
     padding: '17px 15px',
+    whiteSpace: 'pre-wrap',
   },
   ul: {
     paddingInlineStart: 20,
