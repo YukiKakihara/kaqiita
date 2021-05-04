@@ -10,20 +10,27 @@ interface Props {
 
 export const BlogCard: React.FC<Props> = ({ blog, className }) => {
   const {
+    id,
     title,
     summary,
     thumbnail: { url },
   } = blog;
 
+  const onClick = (): void => {
+    window.location.href = `/blogs/${id}`;
+  };
+
   return (
-    <Wrapper className={className}>
+    <Wrapper className={className} onClick={onClick}>
       <WrappedResponsiveImage
         alt={title}
         aspectRatio={1}
         imageBorderRadius={10}
         src={url}
       />
-      <Title>{title}</Title>
+      <Title>
+        <a href={`/blogs/${id}`}>{title}</a>
+      </Title>
       <Summary>{summary}</Summary>
     </Wrapper>
   );
@@ -32,6 +39,7 @@ export const BlogCard: React.FC<Props> = ({ blog, className }) => {
 const Wrapper = styled.div({
   border: `2px solid ${Colors.border}`,
   borderRadius: 10,
+  cursor: 'pointer',
   padding: 10,
 });
 

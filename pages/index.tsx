@@ -27,6 +27,4 @@ const Page: React.FC = () => {
 
 const Wrapper = styled.div({});
 
-const Body = styled.div({});
-
 export default Page;

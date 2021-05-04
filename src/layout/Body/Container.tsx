@@ -14,7 +14,7 @@ export const Container: React.FC<Props> = ({ children, className }) => {
         </a>
         <br />
         <Sub>
-          新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。
+          新米 Web エンジニアが適当なことを書いてます。温かく見守ってやってください。
         </Sub>
       </SiteTitle>
       <Main>{children}</Main>
