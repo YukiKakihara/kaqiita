@@ -5,4 +5,5 @@ export const Colors = {
   sidebarBackground: '#1f2123',
   text: 'rgba(255, 255, 255, 0.8)',
   textLink: '#66a5e1',
+  white: '#fff',
 };
