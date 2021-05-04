@@ -11,7 +11,7 @@ const Page: React.FC = () => {
   const { id: blogId } = router.query;
   const {
     blog,
-    blog: { body, summary, title },
+    blog: { body, openAt, revisedAt, summary, title },
     isError,
   } = useBlog(blogId as string);
 
@@ -30,11 +30,32 @@ const Page: React.FC = () => {
         <meta name="description" content={summary} />
       </Head>
       <HeaderOne text={title} />
+      {revisedAt && (
+        <OpenAndRevisedDate>
+          最終更新日：{formattedDate(revisedAt)}
+        </OpenAndRevisedDate>
+      )}
+      {openAt && (
+        <OpenAndRevisedDate>公開日：{formattedDate(openAt)}</OpenAndRevisedDate>
+      )}
       <BlogBodyParser body={body} />
     </Wrapper>
   );
 };
 
+const formattedDate = (datetimeStr: string): string => {
+  if (!datetimeStr) return '';
+
+  const date = new Date(datetimeStr);
+
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+};
+
 const Wrapper = styled.div();
+
+const OpenAndRevisedDate = styled.div({
+  fontSize: 12,
+  textAlign: 'right',
+});
 
 export default Page;

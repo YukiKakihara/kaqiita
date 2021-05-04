@@ -9,6 +9,7 @@ export type BlogResponse = ContentResponse<{
   summary?: string;
   body?: string;
   thumbnail?: Image;
+  openAt?: string,
   tags?: TagResponse[];
 }>;
 
@@ -18,6 +19,7 @@ export const initialBlogValue = {
   summary: '',
   body: '',
   thumbnail: initialImageValue,
+  openAt: '',
   tags: [initialTagValue],
   createdAt: '',
   updatedAt: '',
