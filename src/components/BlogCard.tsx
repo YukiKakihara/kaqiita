@@ -45,6 +45,7 @@ const Wrapper = styled.div({
 
 const WrappedResponsiveImage = styled(ResponsiveImage)({
   margin: '0 auto 10px',
+  maxWidth: 300,
   width: '90%',
 });
 

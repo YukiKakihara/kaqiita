@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mq } from 'lib/mediaQuery';
 import { Footer } from './Footer';
 
 interface Props {
@@ -14,7 +15,8 @@ export const Container: React.FC<Props> = ({ children, className }) => {
         </a>
         <br />
         <Sub>
-          新米 Web エンジニアが適当なことを書いてます。温かく見守ってやってください。
+          新米 Web
+          エンジニアが適当なことを書いてます。温かく見守ってやってください。
         </Sub>
       </SiteTitle>
       <Main>{children}</Main>
@@ -25,10 +27,12 @@ export const Container: React.FC<Props> = ({ children, className }) => {
 
 const Wrapper = styled.footer({});
 
-const SiteTitle = styled.div({
-  maxWidth: 900,
-  padding: '30px 50px',
-});
+const SiteTitle = styled.div(
+  mq({
+    maxWidth: 900,
+    padding: [30, '30px 50px'],
+  })
+);
 
 const Big = styled.span({
   fontSize: 36,
@@ -38,8 +42,10 @@ const Sub = styled.span({
   opacity: 0.6,
 });
 
-const Main = styled.div({
-  maxWidth: 900,
-  minHeight: 800,
-  padding: '0 50px 50px',
-});
+const Main = styled.div(
+  mq({
+    maxWidth: 900,
+    minHeight: 800,
+    padding: ['0 30px 30px', '0 50px 50px'],
+  })
+);

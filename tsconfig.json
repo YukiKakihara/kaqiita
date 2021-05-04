@@ -22,6 +22,7 @@
       "components/*": ["src/components/*"],
       "constants/*": ["src/constants/*"],
       "hooks/*": ["hooks/*"],
+      "lib/*": ["src/lib/*"],
       "src/*": ["src/*"],
       "styles/*": ["styles/*"],
       "types/*": ["src/types/*"],

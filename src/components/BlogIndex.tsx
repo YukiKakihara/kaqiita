@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mq } from 'lib/mediaQuery';
 import { BlogResponse as Blog } from 'src/types/blog';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogCard } from './BlogCard';
@@ -29,7 +30,9 @@ const CardArea = styled.div({
   justifyContent: 'space-between',
 });
 
-const WrappedBlogCard = styled(BlogCard)({
-  marginBottom: 15,
-  width: '47.5%',
-});
+const WrappedBlogCard = styled(BlogCard)(
+  mq({
+    marginBottom: 15,
+    width: ['100%', '47.5%'],
+  })
+);

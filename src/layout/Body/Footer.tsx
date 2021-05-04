@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mq } from 'lib/mediaQuery';
 import { Colors } from 'constants/Colors';
 import { TextLink } from 'components/TextLink';
 
@@ -22,14 +23,19 @@ export const Footer: React.FC<Props> = ({ className }) => {
   );
 };
 
-const Wrapper = styled.footer({
-  borderTop: `1px solid ${Colors.border}`,
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '30px 0',
-});
+const Wrapper = styled.footer(
+  mq({
+    borderTop: `1px solid ${Colors.border}`,
+    display: ['block', 'flex'],
+    justifyContent: 'space-between',
+    padding: '30px 0',
+  })
+);
 
-const Content = styled.div({
-  flex: 1,
-  textAlign: 'center',
-});
+const Content = styled.div(
+  mq({
+    flex: 1,
+    padding: ['5px 30px', 0],
+    textAlign: ['left', 'center'],
+  })
+);

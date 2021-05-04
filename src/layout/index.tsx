@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 import { Colors } from 'constants/Colors';
+import { NotMobile } from 'components/ReactResponsive';
 import { Sidebar } from './Sidebar';
 import { Body } from './Body';
 
@@ -19,7 +20,9 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <WrappedSidebar />
+      <NotMobile>
+        <WrappedSidebar />
+      </NotMobile>
       <WrappedBody>{children}</WrappedBody>
     </Wrapper>
   );
@@ -38,8 +41,4 @@ const WrappedSidebar = styled(Sidebar)({
 
 const WrappedBody = styled(Body)({
   flex: 8,
-});
-
-const Main = styled.div({
-  padding: 50,
 });
