@@ -19,7 +19,10 @@ export const BlogBodyParser: React.FC<Props> = ({ body, className }) => {
 };
 
 const Wrapper = styled.div({
-  a: textLinkStyle,
+  a: {
+    ...textLinkStyle,
+    wordBreak: 'break-all',
+  },
   code: {
     backgroundColor: Colors.darkBackground,
     borderRadius: 2,
