@@ -2,9 +2,7 @@ import { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export const useGoogleAdsense = (): void => {
-  const isNotProduction = process.env.ENV !== 'production';
-
-  if (isNotProduction) return;
+  if (process.env.ENV !== 'production') return;
 
   const { asPath } = useRouter();
 
