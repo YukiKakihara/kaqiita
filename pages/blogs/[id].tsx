@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Custom404 from 'pages/404';
 import { useBlog } from 'hooks/blogs/[id]/useBlog';
+import { formattedDate } from 'utils/formattedDate';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogBodyParser } from 'components/BlogBodyParser';
 
@@ -41,14 +42,6 @@ const Page: React.FC = () => {
       <BlogBodyParser body={body} />
     </Wrapper>
   );
-};
-
-const formattedDate = (datetimeStr: string): string => {
-  if (!datetimeStr) return '';
-
-  const date = new Date(datetimeStr);
-
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 };
 
 const Wrapper = styled.div();

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { BlogResponse as Blog } from 'src/types/blog';
+import { formattedDate } from 'utils/formattedDate';
 import { Colors } from 'constants/Colors';
 import { ResponsiveImage } from './ResponsiveImage';
 
@@ -11,6 +12,7 @@ interface Props {
 export const BlogCard: React.FC<Props> = ({ blog, className }) => {
   const {
     id,
+    openAt,
     title,
     summary,
     thumbnail: { url },
@@ -33,6 +35,7 @@ export const BlogCard: React.FC<Props> = ({ blog, className }) => {
       <Title>
         <a href={`/blogs/${id}`}>{title}</a>
       </Title>
+      <OpenAt>{formattedDate(openAt)}</OpenAt>
       <Summary>{summary}</Summary>
     </Wrapper>
   );
@@ -58,5 +61,11 @@ const Title = styled.div({
 });
 
 const Summary = styled.div({
+  opacity: 0.6,
+});
+
+const OpenAt = styled.div({
+  fontSize: 12,
+  marginBottom: 5,
   opacity: 0.6,
 });
