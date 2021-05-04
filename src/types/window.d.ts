@@ -1,6 +1,7 @@
 interface Window {
-  prerenderReady: boolean;
   adsbygoogle: { [key: string]: unknown }[];
+  gtag: Gtag.Gtag;
+  prerenderReady: boolean;
 }
 
 declare global {
