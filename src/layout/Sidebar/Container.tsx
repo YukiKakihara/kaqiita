@@ -15,7 +15,7 @@ export const Container: React.FC<Props> = ({ className }) => {
 };
 
 const Wrapper = styled.div({
-  backgroundColor: Colors.sidebarBackground,
+  backgroundColor: Colors.darkBackground,
   borderRight: `1px solid ${Colors.border}`,
   padding: 30,
 });
