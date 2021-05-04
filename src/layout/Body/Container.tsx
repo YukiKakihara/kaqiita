@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from 'lib/mediaQuery';
+import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Footer } from './Footer';
 
 interface Props {
@@ -28,16 +29,12 @@ export const Container: React.FC<Props> = ({ children, className }) => {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428388094499729"
             crossOrigin="anonymous"
           ></script>
-          {/* ディスプレイ_kaqiita */}
-          <ins
-            className="adsbygoogle"
-            style={{ display: 'block' }}
-            data-ad-client="ca-pub-8428388094499729"
-            data-ad-slot="4677958834"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+          <GoogleAdsense
+            client="ca-pub-8428388094499729"
+            slot="4677958834"
+            format="auto"
+            responsive="true"
+          />
         </>
       )}
       <Main>{children}</Main>
