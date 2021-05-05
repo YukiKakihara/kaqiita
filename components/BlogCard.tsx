@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BlogResponse as Blog } from 'src/types/blog';
+import { BlogResponse as Blog } from 'types/blog';
 import { formattedDate } from 'utils/formattedDate';
 import { Colors } from 'constants/Colors';
 import { ResponsiveImage } from './ResponsiveImage';

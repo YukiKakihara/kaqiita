@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from 'utils/mediaQuery';
-import { BlogResponse as Blog } from 'src/types/blog';
+import { BlogResponse as Blog } from 'types/blog';
 import { sortBlogsByNewArrival } from 'utils/sortBlogsByNewArrival';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogCard } from './BlogCard';

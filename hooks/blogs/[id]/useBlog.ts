@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BlogResponse, initialBlogValue } from 'src/types/blog';
+import { BlogResponse, initialBlogValue } from 'types/blog';
 import { client } from 'utils/api';
 
 export const useBlog = (

@@ -3,7 +3,7 @@ import {
   BlogResponse as Blog,
   BlogListResponse,
   initialBlogValue,
-} from 'src/types/blog';
+} from 'types/blog';
 import { client } from 'utils/api';
 
 export const useRoot = (): { blogs: Blog[]; isError: boolean } => {
