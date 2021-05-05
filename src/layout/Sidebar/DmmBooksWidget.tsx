@@ -16,6 +16,11 @@ export const DmmBooksWidget: React.FC<Props> = ({ children, className }) => {
           data-id="3f1c1987da72d3343eec456648cf2037"
           style={{ background: 'transparent' }}
         ></ins>
+        <script
+          className="dmm-widget-scripts"
+          data-id="3f1c1987da72d3343eec456648cf2037"
+          src="https://widget-view.dmm.com/js/placement.js"
+        ></script>
       </Item>
     </Wrapper>
   );
