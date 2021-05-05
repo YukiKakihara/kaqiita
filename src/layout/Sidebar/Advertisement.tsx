@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { isProduction } from 'utils/isProduction';
 import { DmmBooksWidget } from 'components/DmmBooksWidget';
+import { Item } from './Item';
 
 interface Props {
   className?: string;
@@ -12,7 +13,9 @@ export const Advertisement: React.FC<Props> = ({ className, id }) => {
 
   return (
     <Wrapper className={className}>
-      <DmmBooksWidget id={id} />
+      <Item>
+        <DmmBooksWidget id={id} />
+      </Item>
     </Wrapper>
   );
 };
