@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { isProduction } from 'utils/isProduction';
-import { Item } from '../layout/Sidebar/Item';
+import { Item } from '../src/layout/Sidebar/Item';
 
 interface Props {
   className?: string;
