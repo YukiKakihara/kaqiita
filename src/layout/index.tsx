@@ -38,11 +38,6 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
                          gtag('config', 'UA-129782494-2');`,
               }}
             ></script>
-            <script
-              className="dmm-widget-scripts"
-              data-id="3f1c1987da72d3343eec456648cf2037"
-              src="https://widget-view.dmm.com/js/placement.js"
-            ></script>
           </>
         )}
       </Head>
