@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { pageview } from 'utils/gtag';
+import { isProduction } from 'utils/isProduction';
 
 export const useGoogleAnalytics = (): void => {
-  if (process.env.ENV !== 'production') return;
+  if (!isProduction) return;
 
   const { events } = useRouter();
 

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from 'utils/mediaQuery';
+import { isProduction } from 'utils/isProduction';
 import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Footer } from './Footer';
 
@@ -8,8 +9,6 @@ interface Props {
 }
 
 export const Container: React.FC<Props> = ({ children, className }) => {
-  const isProduction = process.env.ENV === 'production';
-
   return (
     <Wrapper className={className}>
       <SiteTitle>

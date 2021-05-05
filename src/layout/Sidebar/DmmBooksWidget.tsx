@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
-import { Image } from 'components/Image';
-import { TextLink } from 'components/TextLink';
+import { isProduction } from 'utils/isProduction';
 import { Item } from './Item';
 
 interface Props {
   className?: string;
 }
 
-export const DmmBooksWidget: React.FC<Props> = ({ children, className }) => {
+export const DmmBooksWidget: React.FC<Props> = ({ className }) => {
+  if (!isProduction) return <></>;
+
   return (
     <Wrapper className={className}>
       <Item>

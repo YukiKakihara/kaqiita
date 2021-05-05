@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import { isProduction } from 'utils/isProduction';
 
 export type Props = {
   className?: string;
@@ -21,6 +22,8 @@ export const GoogleAdsense: React.FC<Props> = ({
   client,
   slot,
 }) => {
+  if (!isProduction) return <></>;
+
   return (
     <ins
       className={`${className} adsbygoogle`}

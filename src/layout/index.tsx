@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Head from 'next/head';
 import { Colors } from 'constants/Colors';
 import { useGoogleAnalytics } from 'hooks/useGoogleAnalytics';
+import { isProduction } from 'utils/isProduction';
 import { NotMobile } from 'components/ReactResponsive';
 import { Sidebar } from './Sidebar';
 import { Body } from './Body';
@@ -12,8 +13,6 @@ interface Props {
 
 export const Layout: React.FC<Props> = ({ children, className }) => {
   useGoogleAnalytics();
-
-  const isProduction = process.env.ENV === 'production';
 
   return (
     <Wrapper className={className}>
