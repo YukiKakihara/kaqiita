@@ -3,13 +3,13 @@ import { Colors } from 'constants/Colors';
 
 interface Props {
   className?: string;
-  title: string;
+  title?: string;
 }
 
 export const Item: React.FC<Props> = ({ children, className, title }) => {
   return (
     <Wrapper className={className}>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       <Body>{children}</Body>
     </Wrapper>
   );
