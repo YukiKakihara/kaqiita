@@ -20,7 +20,7 @@
     "baseUrl": "./",
     "paths": {
       "components/*": ["components/*"],
-      "constants/*": ["src/constants/*"],
+      "constants/*": ["constants/*"],
       "hooks/*": ["hooks/*"],
       "lib/*": ["src/lib/*"],
       "src/*": ["src/*"],
