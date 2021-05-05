@@ -1,5 +1,5 @@
 import aspida from '@aspida/fetch';
-import api from 'src/api/$api';
+import api from 'api/$api';
 
 const fetchConfig: Required<Parameters<typeof aspida>>[1] = {
   baseURL: process.env.MICRO_CMS_HOST,
