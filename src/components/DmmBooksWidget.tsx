@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { isProduction } from 'utils/isProduction';
-import { Item } from './Item';
+import { Item } from '../layout/Sidebar/Item';
 
 interface Props {
   className?: string;
+  id: string;
 }
 
-export const DmmBooksWidget: React.FC<Props> = ({ className }) => {
+export const DmmBooksWidget: React.FC<Props> = ({ className, id }) => {
   if (!isProduction) return <></>;
 
   return (
@@ -14,12 +15,12 @@ export const DmmBooksWidget: React.FC<Props> = ({ className }) => {
       <Item>
         <ins
           className="dmm-widget-placement"
-          data-id="3f1c1987da72d3343eec456648cf2037"
+          data-id={id}
           style={{ background: 'transparent' }}
         ></ins>
         <script
           className="dmm-widget-scripts"
-          data-id="3f1c1987da72d3343eec456648cf2037"
+          data-id={id}
           src="https://widget-view.dmm.com/js/placement.js"
         ></script>
       </Item>

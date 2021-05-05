@@ -2,27 +2,30 @@ import styled from '@emotion/styled';
 import Head from 'next/head';
 import { isProduction } from 'utils/isProduction';
 import { Colors } from 'constants/Colors';
+import { DmmBooksWidgetIds } from 'constants/DmmBooksWidgetIds';
 import { Profile } from './Profile';
-import { DmmBooksWidget } from './DmmBooksWidget';
+import { Advertisement } from './Advertisement';
 
 interface Props {
   className?: string;
 }
 
 export const Container: React.FC<Props> = ({ className }) => {
+  const id = DmmBooksWidgetIds['001'];
+
   return (
     <Wrapper className={className}>
       {isProduction && (
         <Head>
           <script
             className="dmm-widget-scripts"
-            data-id="3f1c1987da72d3343eec456648cf2037"
+            data-id={id}
             src="https://widget-view.dmm.com/js/placement.js"
           ></script>
         </Head>
       )}
       <Profile />
-      {isProduction && <DmmBooksWidget />}
+      {isProduction && <Advertisement id={id} />}
     </Wrapper>
   );
 };
