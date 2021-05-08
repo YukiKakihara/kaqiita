@@ -34,4 +34,5 @@ export type GetContentQuery = {
   draftKey?: string;
   fields?: string;
   depth?: number;
+  limit?: number;
 };

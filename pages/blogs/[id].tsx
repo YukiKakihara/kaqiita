@@ -41,7 +41,7 @@ const Page: React.FC<Props> = ({ blog }) => {
 
 export const getStaticPaths = async () => {
   const blogs = await client.v1.blogs
-    .$get()
+    .$get({ query: { limit: 1000 } })
     .then((res: BlogListResponse) => res.contents)
     .catch(() => null);
   const paths = blogs.map((blog) => `/blogs/${blog.id}`);
