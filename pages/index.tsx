@@ -25,9 +25,6 @@ const Page: React.FC<Props> = ({ blogs }) => {
 };
 
 export const getStaticProps = async () => {
-  const key = {
-    headers: { 'X-API-KEY': process.env.MICRO_CMS_API_KEY },
-  };
   const blogs = await client.v1.blogs
     .$get()
     .then((res: BlogListResponse) => res.contents)

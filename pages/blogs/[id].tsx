@@ -1,27 +1,22 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Custom404 from 'pages/404';
-import { useBlog } from 'hooks/blogs/[id]/useBlog';
+import { client } from 'utils/api';
+import { BlogResponse, BlogListResponse } from 'types/blog';
 import { formattedDate } from 'utils/formattedDate';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogBodyParser } from 'components/BlogBodyParser';
 
-const Page: React.FC = () => {
+interface Props {
+  blog: BlogResponse;
+}
+
+const Page: React.FC<Props> = ({ blog }) => {
   const router = useRouter();
-  const { id: blogId } = router.query;
-  const {
-    blog,
-    blog: { body, openAt, revisedAt, summary, title },
-    isError,
-  } = useBlog(blogId as string);
+  const { body, openAt, revisedAt, summary, title } = blog;
 
-  if (router.isFallback || !blog) {
+  if (router.isFallback) {
     return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <Custom404 />;
   }
 
   return (
@@ -42,6 +37,30 @@ const Page: React.FC = () => {
       <BlogBodyParser body={body} />
     </Wrapper>
   );
+};
+
+export const getStaticPaths = async () => {
+  const blogs = await client.v1.blogs
+    .$get()
+    .then((res: BlogListResponse) => res.contents)
+    .catch(() => null);
+  const paths = blogs.map((blog) => `/blogs/${blog.id}`);
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async (context) => {
+  const blogId = context.params.id;
+  const blog = await client.v1.blogs
+    ._id(blogId)
+    .$get()
+    .then((blogResponse: BlogResponse) => blogResponse)
+    .catch(() => null);
+  return {
+    props: {
+      blog,
+    },
+  };
 };
 
 const Wrapper = styled.div();
