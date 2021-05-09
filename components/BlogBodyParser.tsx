@@ -27,6 +27,7 @@ const Wrapper = styled.div({
     backgroundColor: Colors.darkBackground,
     borderRadius: 2,
     padding: '3px 5px',
+    wordBreak: 'break-all',
   },
   h2: headerTwoStyle,
   h3: headerThreeStyle,
