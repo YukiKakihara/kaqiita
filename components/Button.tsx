@@ -21,6 +21,7 @@ export const Button: React.FC<Props> = ({
 };
 
 const Wrapper = styled.button(({ disabled }) => ({
+  border: 'none',
   borderRadius: 50,
   cursor: disabled ? 'not-allowed' : 'pointer',
   fontSize: 16,
