@@ -17,5 +17,5 @@ a {
 
 /* Google Adsense が勝手に突っ込んだ広告でデザインが崩れないようにするため */
 .adsbygoogle {
-  width: 1px;
+  margin-right: -30px;
 }

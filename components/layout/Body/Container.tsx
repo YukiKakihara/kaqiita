@@ -42,7 +42,7 @@ export const Container: React.FC<Props> = ({ children, className }) => {
   );
 };
 
-const Wrapper = styled.footer({});
+const Wrapper = styled.div({});
 
 const SiteTitle = styled.div(
   mq({
