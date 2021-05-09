@@ -15,7 +15,15 @@ interface Props {
 
 const Page: React.FC<Props> = ({ blog }) => {
   const router = useRouter();
-  const { body, openAt, revisedAt, summary, title } = blog;
+  const {
+    body,
+    id,
+    openAt,
+    revisedAt,
+    summary,
+    thumbnail: { url: thumbnailUrl },
+    title,
+  } = blog;
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -26,6 +34,36 @@ const Page: React.FC<Props> = ({ blog }) => {
       <Head>
         <title>{title} | Kaqiita</title>
         <meta name="description" content={summary} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "http://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "${process.env.APP_HOST}/blogs/${id}"
+              },
+              "headline": "${title}",
+              "image": "${thumbnailUrl}",
+              "datePublished": "${new Date(openAt).toISOString()}",
+              "dateModified": "${new Date(revisedAt).toISOString()}",
+              "author": {
+                "@type": "Person",
+                "name": "Yuki Kakihara"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Kaqiita",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "${process.env.APP_HOST}/favicon.ico"
+                }
+              }
+            }`,
+          }}
+        ></script>
       </Head>
       <HeaderOne text={title} />
       {revisedAt && (
