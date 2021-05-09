@@ -3,5 +3,5 @@ export const formattedDate = (datetimeStr: string): string => {
 
   const date = new Date(datetimeStr);
 
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };

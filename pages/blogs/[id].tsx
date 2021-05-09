@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
+import { GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { client } from 'utils/api';
-import { BlogResponse, BlogListResponse } from 'types/blog';
+import { getAllBlogs } from 'utils/getAllBlogs';
+import { getAllBlogPaths } from 'utils/getAllBlogPaths';
+import { getBlog } from 'utils/getBlog';
+import { BlogResponse } from 'types/blog';
 import { formattedDate } from 'utils/formattedDate';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogBodyParser } from 'components/BlogBodyParser';
@@ -39,23 +42,22 @@ const Page: React.FC<Props> = ({ blog }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const blogs = await client.v1.blogs
-    .$get({ query: { limit: 1000 } })
-    .then((res: BlogListResponse) => res.contents)
-    .catch(() => null);
+export const getStaticPaths = async (): Promise<{
+  paths: string[];
+  fallback: boolean;
+}> => {
+  const { blogs } = await getAllBlogs();
   const paths = blogs.map((blog) => `/blogs/${blog.id}`);
 
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context) => {
-  const blogId = context.params.id;
-  const blog = await client.v1.blogs
-    ._id(blogId)
-    .$get()
-    .then((blogResponse: BlogResponse) => blogResponse)
-    .catch(() => null);
+export const getStaticProps = async (
+  context: GetStaticPropsContext
+): Promise<{ props: Props }> => {
+  const blogId = context.params.id as string;
+  const { blog } = await getBlog(blogId);
+
   return {
     props: {
       blog,
