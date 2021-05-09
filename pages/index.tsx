@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import { useRoot } from 'hooks/useRoot';
 import { client } from 'utils/api';
 import { BlogResponse as Blog, BlogListResponse } from 'types/blog';
 import { BlogIndex } from 'components/BlogIndex';
@@ -11,6 +12,7 @@ interface Props {
 
 const Page: React.FC<Props> = ({ blogs }) => {
   const router = useRouter();
+  const [page, nextPage] = useRoot();
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -18,7 +20,7 @@ const Page: React.FC<Props> = ({ blogs }) => {
 
   return (
     <Wrapper>
-      {blogs && <BlogIndex blogs={blogs} />}
+      {blogs && <BlogIndex blogs={blogs} nextPage={nextPage} page={page} />}
       <AboutBlog />
     </Wrapper>
   );
