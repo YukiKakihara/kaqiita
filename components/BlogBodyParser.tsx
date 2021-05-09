@@ -31,6 +31,10 @@ const Wrapper = styled.div({
   },
   h2: headerTwoStyle,
   h3: headerThreeStyle,
+  iframe: {
+    maxWidth: 600,
+    width: '100%',
+  },
   img: {
     maxWidth: 600,
     width: '100%',
