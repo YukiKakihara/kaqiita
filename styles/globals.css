@@ -17,5 +17,7 @@ a {
 
 /* Google Adsense の広告が自動で差し込まれてもデザインが崩れないようにするため */
 .google-auto-placed {
-  margin: 0 -30px;
+  @media screen and (max-width:487px) {
+    margin: 0 -30px;
+  }
 }
