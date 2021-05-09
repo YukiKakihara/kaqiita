@@ -3,7 +3,6 @@ import { GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { getAllBlogs } from 'utils/getAllBlogs';
-import { getAllBlogPaths } from 'utils/getAllBlogPaths';
 import { getBlog } from 'utils/getBlog';
 import { BlogResponse } from 'types/blog';
 import { formattedDate } from 'utils/formattedDate';
