@@ -26,7 +26,7 @@ const Page: React.FC<Props> = ({ blogs }) => {
 
 export const getStaticProps = async () => {
   const blogs = await client.v1.blogs
-    .$get()
+    .$get({ query: { limit: 1000 } })
     .then((res: BlogListResponse) => res.contents)
     .catch(() => null);
   return {

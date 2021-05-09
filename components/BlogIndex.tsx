@@ -13,7 +13,7 @@ interface Props {
 export const BlogIndex: React.FC<Props> = ({ blogs, className }) => {
   return (
     <Wrapper className={className}>
-      <HeaderOne text="ブログ記事一覧" />
+      <HeaderOne text="ブログ一覧" />
       <CardArea>
         {sortBlogsByNewArrival(blogs).map((blog) => (
           <WrappedBlogCard key={blog.id} blog={blog} />
