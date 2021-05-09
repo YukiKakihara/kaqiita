@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { Colors } from 'constants/Colors';
 import { useGoogleAnalytics } from 'hooks/useGoogleAnalytics';
 import { isProduction } from 'utils/isProduction';
-import { NotMobile } from 'components/ReactResponsive';
-import { Sidebar } from './Sidebar';
-import { Body } from './Body';
+import { Mobile, NotMobile } from 'components/ReactResponsive';
+import { PcLayout } from './Pc';
+import { SpLayout } from './Sp';
 
 interface Props {
   className?: string;
@@ -40,10 +40,12 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
           </>
         )}
       </Head>
+      <Mobile>
+        <SpLayout>{children}</SpLayout>
+      </Mobile>
       <NotMobile>
-        <WrappedSidebar />
+        <PcLayout>{children}</PcLayout>
       </NotMobile>
-      <WrappedBody>{children}</WrappedBody>
     </Wrapper>
   );
 };
@@ -53,12 +55,4 @@ const Wrapper = styled.div({
   color: Colors.text,
   display: 'flex',
   fontSize: 14,
-});
-
-const WrappedSidebar = styled(Sidebar)({
-  flex: 1,
-});
-
-const WrappedBody = styled(Body)({
-  flex: 8,
 });

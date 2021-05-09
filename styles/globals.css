@@ -14,8 +14,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-/* Google Adsense が勝手に突っ込んだ広告でデザインが崩れないようにするため */
-.adsbygoogle-noablate {
-  margin: 16.08px -30px 10px;
-}
