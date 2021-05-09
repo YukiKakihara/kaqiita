@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { Sidebar } from '../components/Sidebar';
-import { Body } from '../components/Body';
+import { Sidebar } from './Sidebar';
+import { Body } from '../Body';
 
 export const Container: React.FC = ({ children }) => {
   return (

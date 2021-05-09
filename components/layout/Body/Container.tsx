@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 import { mq } from 'utils/mediaQuery';
-import { isProduction } from 'utils/isProduction';
-import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Footer } from './Footer';
 
 interface Props {
@@ -21,21 +19,6 @@ export const Container: React.FC<Props> = ({ children, className }) => {
           エンジニアが適当なことを書いてます。温かく見守ってやってください。
         </Sub>
       </SiteTitle>
-      {isProduction && (
-        <>
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428388094499729"
-            crossOrigin="anonymous"
-          ></script>
-          <GoogleAdsense
-            client="ca-pub-8428388094499729"
-            slot="4677958834"
-            format="auto"
-            responsive="true"
-          />
-        </>
-      )}
       <Main>{children}</Main>
       <Footer />
     </Wrapper>

@@ -1,4 +1,4 @@
-import { Body } from '../components/Body';
+import { Body } from '../Body';
 
 export const Container: React.FC = ({ children }) => {
   return <Body>{children}</Body>;

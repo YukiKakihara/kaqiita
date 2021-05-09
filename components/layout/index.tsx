@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Colors } from 'constants/Colors';
 import { useGoogleAnalytics } from 'hooks/useGoogleAnalytics';
 import { isProduction } from 'utils/isProduction';
+import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Mobile, NotMobile } from 'components/ReactResponsive';
 import { PcLayout } from './Pc';
 import { SpLayout } from './Sp';
@@ -40,6 +41,21 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
           </>
         )}
       </Head>
+      {isProduction && (
+        <>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428388094499729"
+            crossOrigin="anonymous"
+          ></script>
+          <GoogleAdsense
+            client="ca-pub-8428388094499729"
+            slot="4677958834"
+            format="auto"
+            responsive="true"
+          />
+        </>
+      )}
       <Mobile>
         <SpLayout>{children}</SpLayout>
       </Mobile>
