@@ -1,24 +1,36 @@
+import RSS from 'rss';
+import { sortBlogsByNewArrival } from 'utils/sortBlogsByNewArrival';
 import { getAllBlogs } from './getAllBlogs';
-import { formattedDate } from './formattedDate';
 
 export const generateFeedXml = async (): Promise<{ xml: string }> => {
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  const feed = new RSS({
+    title: 'Kaqiita',
+    description:
+      '新米 Web エンジニアが適当なことを書いてます。温かく見守ってやってください。',
+    feed_url: `${process.env.APP_HOST}/feed`,
+    site_url: process.env.APP_HOST,
+    image_url: `${process.env.APP_HOST}/profile.png`,
+    managingEditor: 'Yuki Kakihara',
+    webMaster: 'Yuki Kakihara',
+    copyright: 'Yuki Kakihara',
+    ttl: 1440,
+    language: 'ja',
+  });
 
   const { blogs } = await getAllBlogs();
 
-  blogs.forEach((blog) => {
-    const { id, revisedAt } = blog;
+  sortBlogsByNewArrival(blogs).forEach((blog) => {
+    const { id, openAt, summary, title } = blog;
 
-    xml += `
-      <url>
-        <loc>${process.env.APP_HOST}/blogs/${id}</loc>
-        <lastmod>${formattedDate(revisedAt)}</lastmod>
-      </url>
-    `;
+    feed.item({
+      title,
+      description: summary,
+      url: `${process.env.APP_HOST}/blogs/${id}`,
+      guid: id,
+      author: 'Yuki Kakihara',
+      date: openAt,
+    });
   });
 
-  xml += `</urlset>`;
-
-  return { xml };
+  return { xml: feed.xml() };
 };
