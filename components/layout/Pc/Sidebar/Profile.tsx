@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { clickLogToGA } from 'utils/gtag';
 import { Image } from 'components/Image';
 import { TextLink } from 'components/TextLink';
 import { Item } from './Item';
@@ -18,6 +19,7 @@ export const Profile: React.FC<Props> = ({ children, className }) => {
         <LinkWrapper>
           <TextLink
             href="https://github.com/YukiKakihara"
+            onClick={() => clickLogToGA('pc_sidebar_profile', 'github')}
             rel="noopener noreferrer nofollow"
             target="_blank"
           >
@@ -27,6 +29,7 @@ export const Profile: React.FC<Props> = ({ children, className }) => {
         <LinkWrapper>
           <TextLink
             href="https://twitter.com/KakkiiiiKyg"
+            onClick={() => clickLogToGA('pc_sidebar_profile', 'twitter')}
             rel="noopener noreferrer nofollow"
             target="_blank"
           >

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { pageview } from 'utils/gtag';
+import { pageviewLogToGA } from 'utils/gtag';
 import { isProduction } from 'utils/isProduction';
 
 export const useGoogleAnalytics = (): void => {
@@ -9,7 +9,7 @@ export const useGoogleAnalytics = (): void => {
   const { events } = useRouter();
 
   const handleRouteChange = (url: string): void => {
-    pageview(url);
+    pageviewLogToGA(url);
   };
 
   useEffect(() => {
