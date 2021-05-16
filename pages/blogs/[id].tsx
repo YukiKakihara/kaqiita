@@ -25,6 +25,8 @@ const Page: React.FC<Props> = ({ blog }) => {
     title,
   } = blog;
 
+  const blogUrl = `${process.env.APP_HOST}/blogs/${id}`;
+
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
@@ -34,6 +36,10 @@ const Page: React.FC<Props> = ({ blog }) => {
       <Head>
         <title>{title} | Kaqiita</title>
         <meta name="description" content={summary} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={summary} />
+        <meta property="og:url" content={blogUrl} />
+        <meta property="og:image" content={thumbnailUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -43,7 +49,7 @@ const Page: React.FC<Props> = ({ blog }) => {
               "@type": "BlogPosting",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "${process.env.APP_HOST}/blogs/${id}"
+                "@id": "${blogUrl}"
               },
               "headline": "${title}",
               "image": "${thumbnailUrl}",

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { useRoot } from 'hooks/useRoot';
 import { getAllBlogs } from 'utils/getAllBlogs';
 import { BlogResponse as Blog } from 'types/blog';
@@ -20,6 +21,10 @@ const Page: React.FC<Props> = ({ blogs }) => {
 
   return (
     <Wrapper>
+      <Head>
+        <meta property="og:title" content="トップ" />
+        <meta property="og:url" content={process.env.APP_HOST} />
+      </Head>
       {blogs && <BlogIndex blogs={blogs} nextPage={nextPage} page={page} />}
       <AboutBlog />
     </Wrapper>

@@ -10,6 +10,8 @@ const Page: React.FC = () => {
     <Wrapper>
       <Head>
         <meta name="robots" content="noindex" />
+        <meta property="og:title" content="プライバシーポリシー" />
+        <meta property="og:url" content={`${process.env.APP_HOST}/privacy_policy`} />
       </Head>
       <HeaderOne text="プライバシーポリシー" />
       <HeaderTwo text="広告の配信について" />

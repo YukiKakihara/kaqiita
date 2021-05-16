@@ -7,6 +7,8 @@ const Page: React.FC = () => {
     <Wrapper>
       <Head>
         <meta name="robots" content="noindex" />
+        <meta property="og:title" content="お問い合わせ" />
+        <meta property="og:url" content={`${process.env.APP_HOST}/inquiry`} />
       </Head>
       <InquiryForm />
     </Wrapper>
