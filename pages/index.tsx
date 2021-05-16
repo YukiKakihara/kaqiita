@@ -24,6 +24,7 @@ const Page: React.FC<Props> = ({ blogs }) => {
       <Head>
         <meta property="og:title" content="トップ" />
         <meta property="og:url" content={process.env.APP_HOST} />
+        <meta property="og:image" content="/favicon.ico" />
       </Head>
       {blogs && <BlogIndex blogs={blogs} nextPage={nextPage} page={page} />}
       <AboutBlog />

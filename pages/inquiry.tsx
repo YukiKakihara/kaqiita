@@ -9,6 +9,7 @@ const Page: React.FC = () => {
         <meta name="robots" content="noindex" />
         <meta property="og:title" content="お問い合わせ" />
         <meta property="og:url" content={`${process.env.APP_HOST}/inquiry`} />
+        <meta property="og:image" content="/favicon.ico" />
       </Head>
       <InquiryForm />
     </Wrapper>
