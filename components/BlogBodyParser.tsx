@@ -23,6 +23,9 @@ const Wrapper = styled.div({
     ...textLinkStyle,
     wordBreak: 'break-all',
   },
+  blockquote: {
+    fontStyle: 'italic',
+  },
   code: {
     backgroundColor: Colors.darkBackground,
     borderRadius: 2,
