@@ -1,12 +1,12 @@
 import RSS from 'rss';
 import { sortBlogsByNewArrival } from 'utils/sortBlogsByNewArrival';
+import { siteName, siteDescription } from 'constants/SiteInfo';
 import { getAllBlogs } from './getAllBlogs';
 
 export const generateFeedXml = async (): Promise<{ xml: string }> => {
   const feed = new RSS({
-    title: 'Kaqiita',
-    description:
-      '新米 Web エンジニアが適当なことを書いてます。温かく見守ってやってください。',
+    title: siteName,
+    description: siteDescription,
     feed_url: `${process.env.APP_HOST}/feed`,
     site_url: process.env.APP_HOST,
     image_url: `${process.env.APP_HOST}/profile.png`,

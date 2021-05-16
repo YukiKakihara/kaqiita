@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Colors } from 'constants/Colors';
 import { useGoogleAnalytics } from 'hooks/useGoogleAnalytics';
 import { isProduction } from 'utils/isProduction';
+import { siteName, siteDescription } from 'constants/SiteInfo';
 import { GoogleAdsense } from 'components/GoogleAdsense';
 import { Mobile, NotMobile } from 'components/ReactResponsive';
 import { PcLayout } from './Pc';
@@ -18,17 +19,13 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
   return (
     <Wrapper className={className}>
       <Head>
-        <title>Kaqiita</title>
-        <meta
-          name="description"
-          content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
-        />
-        <meta
-          property="og:description"
-          content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
-        />
+        <title>{siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta property="og:description" content={siteDescription} />
         <meta property="og:type" content="blog" />
-        <meta property="og:site_name" content="Kaqiita" />
+        <meta property="og:site_name" content={siteName} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@KakkiiiiKyg" />
         <link rel="icon" href="/favicon.ico" />
         {isProduction && (
           <>

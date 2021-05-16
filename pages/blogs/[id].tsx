@@ -6,6 +6,7 @@ import { getAllBlogs } from 'utils/getAllBlogs';
 import { getBlog } from 'utils/getBlog';
 import { BlogResponse } from 'types/blog';
 import { formattedDate } from 'utils/formattedDate';
+import { siteName } from 'constants/SiteInfo';
 import { HeaderOne } from 'components/HeaderOne';
 import { BlogBodyParser } from 'components/BlogBodyParser';
 
@@ -34,14 +35,14 @@ const Page: React.FC<Props> = ({ blog }) => {
   return (
     <Wrapper>
       <Head>
-        <title>{title} | Kaqiita</title>
+        <title>
+          {title} | {siteName}
+        </title>
         <meta name="description" content={summary} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={summary} />
         <meta property="og:url" content={blogUrl} />
         <meta property="og:image" content={thumbnailUrl} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@KakkiiiiKyg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -63,7 +64,7 @@ const Page: React.FC<Props> = ({ blog }) => {
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Kaqiita",
+                "name": "${siteName}",
                 "logo": {
                   "@type": "ImageObject",
                   "url": "${process.env.APP_HOST}/favicon.ico"

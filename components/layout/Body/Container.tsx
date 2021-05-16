@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from 'utils/mediaQuery';
+import { siteName, siteDescription } from 'constants/SiteInfo';
 import { Footer } from './Footer';
 
 interface Props {
@@ -11,13 +12,10 @@ export const Container: React.FC<Props> = ({ children, className }) => {
     <Wrapper className={className}>
       <SiteTitle>
         <a href="/">
-          <Big>Kaqiita</Big>
+          <Big>{siteName}</Big>
         </a>
         <br />
-        <Sub>
-          新米 Web
-          エンジニアが適当なことを書いてます。温かく見守ってやってください。
-        </Sub>
+        <Sub>{siteDescription}</Sub>
       </SiteTitle>
       <Main>{children}</Main>
       <Footer />
