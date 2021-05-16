@@ -40,6 +40,8 @@ const Page: React.FC<Props> = ({ blog }) => {
         <meta property="og:description" content={summary} />
         <meta property="og:url" content={blogUrl} />
         <meta property="og:image" content={thumbnailUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@KakkiiiiKyg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

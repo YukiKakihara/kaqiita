@@ -21,13 +21,14 @@ export const Layout: React.FC<Props> = ({ children, className }) => {
         <title>Kaqiita</title>
         <meta
           name="description"
+          content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
+        />
+        <meta
           property="og:description"
           content="新米Webエンジニアが適当なことを書いてます。温かく見守ってやってください。"
         />
         <meta property="og:type" content="blog" />
         <meta property="og:site_name" content="Kaqiita" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@KakkiiiiKyg" />
         <link rel="icon" href="/favicon.ico" />
         {isProduction && (
           <>
